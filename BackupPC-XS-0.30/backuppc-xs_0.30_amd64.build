@@ -1,0 +1,16 @@
+ dpkg-buildpackage -rfakeroot -D -us -uc
+dpkg-buildpackage: warning: using a gain-root-command while being root
+dpkg-buildpackage: source package backuppc-xs
+dpkg-buildpackage: source version 0.30
+dpkg-buildpackage: source distribution UNRELEASED
+dpkg-buildpackage: source changed by jack <jack@k-net.pro>
+ dpkg-source --before-build backuppc-xs-0.30
+dpkg-buildpackage: host architecture amd64
+ fakeroot debian/rules clean
+dh clean
+   dh_testdir
+   dh_auto_clean
+   dh_clean
+ dpkg-source -b backuppc-xs-0.30
+dpkg-source: error: can't build with source format '3.0 (quilt)': non-native package version does not contain a revision
+dpkg-buildpackage: error: dpkg-source -b backuppc-xs-0.30 gave error exit status 255

@@ -1,0 +1,251 @@
+ dpkg-buildpackage -rfakeroot -D -us -uc
+dpkg-buildpackage: warning: using a gain-root-command while being root
+dpkg-buildpackage: source package backuppc
+dpkg-buildpackage: source version 4.0.0~alpha3-1
+dpkg-buildpackage: source distribution UNRELEASED
+dpkg-buildpackage: source changed by Jack <jack@k-net.pro>
+ dpkg-source --before-build backuppc-4.0.0alpha3
+dpkg-buildpackage: host architecture amd64
+dpkg-source: info: applying pod2man:-utf8
+ fakeroot debian/rules clean
+dh_testdir
+dh_testroot
+rm -f build-stamp configure-stamp index.cgi
+# Add here commands to clean up after the build process.
+rm -f init.d/*-backuppc*
+rm -f backuppc.8*
+dh_clean
+ dpkg-source -b backuppc-4.0.0alpha3
+dpkg-source: info: using source format `3.0 (quilt)'
+dpkg-source: info: building backuppc using existing ./backuppc_4.0.0~alpha3.orig.tar.gz
+dpkg-source: info: building backuppc in backuppc_4.0.0~alpha3-1.debian.tar.xz
+dpkg-source: info: building backuppc in backuppc_4.0.0~alpha3-1.dsc
+ debian/rules build
+dh_testdir
+# Add here commands to configure the package.
+touch configure-stamp
+dh_testdir
+# Add here commands to compile the package.
+cc -D_FORTIFY_SOURCE=2 -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wl,-z,relro debian/setuidwrapper.c -o index.cgi
+touch build-stamp
+ fakeroot debian/rules binary
+dh_testdir
+dh_testroot
+dh_prep
+dh_installdirs
+# Add here commands to install the package into debian/backuppc.
+chmod 755 ./configure.pl
+./configure.pl --batch --bin-path perl=/usr/bin/perl --bin-path tar=/bin/tar --bin-path smbclient=/usr/bin/smbclient --bin-path nmblookup=/usr/bin/nmblookup --bin-path rsync=/usr/bin/rsync --bin-path ping=/bin/ping --bin-path df=/bin/df --bin-path ssh=/usr/bin/ssh --bin-path sendmail=/usr/sbin/sendmail --bin-path hostname=/bin/hostname --bin-path split=/usr/bin/split --bin-path par2=/usr/bin/par2 --bin-path cat=/bin/cat --bin-path gzip=/bin/gzip --bin-path bzip2=/bin/bzip2 --config-dir /etc/backuppc --no-fhs --cgi-dir /usr/share/backuppc/cgi-bin --data-dir /var/lib/backuppc --dest-dir /root/backuppc4/BackupPC-4.0.0alpha3/backuppc-4.0.0alpha3/debian/backuppc/ --html-dir /usr/share/backuppc/image --html-dir-url /backuppc/image --install-dir /usr/share/backuppc --uid-ignore --hostname XXXXXX
+
+Is this a new installation or upgrade for BackupPC?  If this is
+an upgrade please tell me the full path of the existing BackupPC
+configuration file (eg: /etc/BackupPC/config.pl).  Otherwise, just
+hit return.
+
+--> Full path to existing main config.pl []
+
+I found the following locations for these programs:
+
+    bzip2        => /bin/bzip2
+    cat          => /bin/cat
+    df           => /bin/df
+    gtar/tar     => /bin/tar
+    gzip         => /bin/gzip
+    hostname     => /bin/hostname
+    nmblookup    => /usr/bin/nmblookup
+    par2         => /usr/bin/par2
+    perl         => /usr/bin/perl
+    ping         => /bin/ping
+    rrdtool      => 
+    rsync        => /usr/bin/rsync
+    rsync_bpc    => /usr/bin/rsync_bpc
+    sendmail     => /usr/sbin/sendmail
+    smbclient    => /usr/bin/smbclient
+    split        => /usr/bin/split
+    ssh/ssh2     => /usr/bin/ssh
+
+--> Are these paths correct? [y]
+
+Please tell me the hostname of the machine that BackupPC will run on.
+
+--> BackupPC will run on host [XXXXXX]
+
+BackupPC should run as a dedicated user with limited privileges.  You
+need to create a user.  This user will need read/write permission on
+the main data directory and read/execute permission on the install
+directory (these directories will be setup shortly).
+
+The primary group for this user should also be chosen carefully.
+The data directories and files will have group read permission,
+so group members can access backup files.
+
+--> BackupPC should run as user [backuppc]
+
+Please specify an install directory for BackupPC.  This is where the
+BackupPC scripts, library and documentation will be installed.
+
+--> Install directory (full path) [/usr/share/backuppc]
+
+Please specify a data directory for BackupPC.  This is where all the
+PC backup data is stored.  This file system needs to be big enough to
+accommodate all the PCs you expect to backup (eg: at least several GB
+per machine).
+
+--> Data directory (full path) [/var/lib/backuppc]
+
+BackupPC has SCGI and CGI perl interfaces that run under Apache.  You need
+to pick which one to run.
+
+For SCGI, Apache uses the scgi_mod module to communicate with BackupPC_Admin_SCGI,
+which handles the requests.  This allows Apache to run as a different user as
+backuppc.  To use SCGI you need to set SCGIServerPort to any spare
+non-privileged TCP port number.  A negative value disables SCGI.
+
+Important security warning!!  The SCGIServerPort must not be accessible by
+anyone untrusted.  That means you can't allow untrusted users access to the
+BackupPC server, and you should block the SCGIServerPort TCP port from
+network access.
+
+The traditional alternative is to use CGI.  In this case, an executable needs
+to be installed Apache's cgi-bin directory.  This executable needs to run as
+set-uid backuppc, or it can be run under mod_perl with Apache
+running as user backuppc.
+
+--> SCGI port (-1 to disable) [-1]
+--> CGI bin directory (full path, or empty for no CGI) [/usr/share/backuppc/cgi-bin]
+
+BackupPC's CGI and SCGI script need to display various PNG/GIF
+images that should be stored where Apache can serve them.  They
+should be placed somewhere under Apache's DocumentRoot.  BackupPC
+also needs to know the URL to access these images.  Example:
+
+    Apache image directory:  /var/www/htdocs/BackupPC
+    URL for image directory: /BackupPC
+
+The URL for the image directory should start with a slash.
+
+--> Apache image directory (full path, or empty for no S/CGI) [/usr/share/backuppc/image]
+--> URL for image directory (omit http://host; starts with '/', or empty for no S/CGI) [/backuppc/image]
+
+Ok, we're about to:
+
+  - install the binaries, lib and docs in /usr/share/backuppc,
+  - create the data directory /var/lib/backuppc,
+  - create/update the config.pl file /etc/backuppc/config.pl,
+  - optionally install the cgi-bin interface.
+
+--> Do you want to continue? [y]
+Created /root/backuppc4/BackupPC-4.0.0alpha3/backuppc-4.0.0alpha3/debian/backuppc//usr/share/backuppc/bin
+Created /root/backuppc4/BackupPC-4.0.0alpha3/backuppc-4.0.0alpha3/debian/backuppc//usr/share/backuppc/share/doc/BackupPC
+Created /root/backuppc4/BackupPC-4.0.0alpha3/backuppc-4.0.0alpha3/debian/backuppc//usr/share/backuppc/lib/BackupPC/CGI
+Created /root/backuppc4/BackupPC-4.0.0alpha3/backuppc-4.0.0alpha3/debian/backuppc//usr/share/backuppc/lib/BackupPC/Config
+Created /root/backuppc4/BackupPC-4.0.0alpha3/backuppc-4.0.0alpha3/debian/backuppc//usr/share/backuppc/lib/BackupPC/Lang
+Created /root/backuppc4/BackupPC-4.0.0alpha3/backuppc-4.0.0alpha3/debian/backuppc//usr/share/backuppc/lib/BackupPC/Storage
+Created /root/backuppc4/BackupPC-4.0.0alpha3/backuppc-4.0.0alpha3/debian/backuppc//usr/share/backuppc/lib/BackupPC/Xfer
+Created /root/backuppc4/BackupPC-4.0.0alpha3/backuppc-4.0.0alpha3/debian/backuppc//usr/share/backuppc/lib/BackupPC/Zip
+Created /root/backuppc4/BackupPC-4.0.0alpha3/backuppc-4.0.0alpha3/debian/backuppc//usr/share/backuppc/lib/Net/FTP
+Created /root/backuppc4/BackupPC-4.0.0alpha3/backuppc-4.0.0alpha3/debian/backuppc//usr/share/backuppc/image
+Created /root/backuppc4/BackupPC-4.0.0alpha3/backuppc-4.0.0alpha3/debian/backuppc//var/lib/backuppc
+Created /root/backuppc4/BackupPC-4.0.0alpha3/backuppc-4.0.0alpha3/debian/backuppc//var/lib/backuppc/pool
+Created /root/backuppc4/BackupPC-4.0.0alpha3/backuppc-4.0.0alpha3/debian/backuppc//var/lib/backuppc/cpool
+Created /root/backuppc4/BackupPC-4.0.0alpha3/backuppc-4.0.0alpha3/debian/backuppc//var/lib/backuppc/pc
+Created /root/backuppc4/BackupPC-4.0.0alpha3/backuppc-4.0.0alpha3/debian/backuppc//etc/backuppc
+Created /root/backuppc4/BackupPC-4.0.0alpha3/backuppc-4.0.0alpha3/debian/backuppc//var/lib/backuppc/log
+Created /root/backuppc4/BackupPC-4.0.0alpha3/backuppc-4.0.0alpha3/debian/backuppc//var/lib/backuppc/log
+Installing binaries in /root/backuppc4/BackupPC-4.0.0alpha3/backuppc-4.0.0alpha3/debian/backuppc//usr/share/backuppc/bin
+Installing library in /root/backuppc4/BackupPC-4.0.0alpha3/backuppc-4.0.0alpha3/debian/backuppc//usr/share/backuppc/lib
+Installing images in /root/backuppc4/BackupPC-4.0.0alpha3/backuppc-4.0.0alpha3/debian/backuppc//usr/share/backuppc/image
+Making init.d scripts
+Making Apache configuration file for suid-perl
+Installing docs in /root/backuppc4/BackupPC-4.0.0alpha3/backuppc-4.0.0alpha3/debian/backuppc//usr/share/backuppc/share/doc/BackupPC
+Installing config.pl and hosts in /root/backuppc4/BackupPC-4.0.0alpha3/backuppc-4.0.0alpha3/debian/backuppc//etc/backuppc
+PING localhost (127.0.0.1) 56(84) bytes of data.
+64 bytes from localhost (127.0.0.1): icmp_seq=1 ttl=64 time=0.029 ms
+
+--- localhost ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 0.029/0.029/0.029/0.000 ms
+Installing cgi script BackupPC_Admin in /root/backuppc4/BackupPC-4.0.0alpha3/backuppc-4.0.0alpha3/debian/backuppc//usr/share/backuppc/cgi-bin
+
+Ok, it looks like we are finished.  There are several more things you
+will need to do:
+
+  - Browse through the config file, /etc/backuppc/config.pl,
+    and make sure all the settings are correct.  In particular,
+    you will need to set $Conf{CgiAdminUsers} so you have
+    administration privileges in the CGI interface.
+
+  - Edit the list of hosts to backup in /etc/backuppc/hosts.
+
+  - Read the documentation in /usr/share/backuppc/doc/BackupPC.html.
+    Please pay special attention to the security section.
+
+  - Verify that the CGI script BackupPC_Admin runs correctly.  You might
+    need to change the permissions or group ownership of BackupPC_Admin.
+    If this is an upgrade and you are using mod_perl, you will need
+    to restart Apache.  Otherwise it will have stale code.
+
+  - BackupPC should be ready to start.  Don't forget to run it
+    as user backuppc!  The installation also contains an
+    init.d/backuppc script that can be copied to /etc/init.d
+    so that BackupPC can auto-start on boot.  This will also enable
+    administrative users to start the server from the CGI interface.
+    See init.d/README.
+
+Enjoy!
+pod2man --utf8 --section=8 --center="BackupPC manual" doc/BackupPC.pod backuppc.8
+perl -e "s/.IX Title.*/.SH NAME\nbackuppc \\- BackupPC manual/g" -p -i.tmp backuppc.8
+mv -f debian/backuppc/usr/share/backuppc/cgi-bin/* debian/backuppc/usr/share/backuppc/lib/realindex.cgi
+install --mode=755 -D index.cgi debian/backuppc/usr/lib/backuppc/cgi-bin/index.cgi
+install --mode=644 -D conf/hosts debian/backuppc/etc/backuppc/hosts
+install --mode=644 debian/localhost.pl debian/backuppc/etc/backuppc
+install --mode=644 debian/apache.conf debian/backuppc/etc/backuppc
+rm -rf debian/backuppc/var/lib/backuppc/conf/
+(cd debian/backuppc/usr/share/backuppc/cgi-bin; ln -s ../image; ln -s /usr/lib/backuppc/cgi-bin/index.cgi )
+patch --no-backup-if-mismatch -p0 < debian/config.pl.diff
+patching file debian/backuppc/etc/backuppc/config.pl
+mkdir -p debian/backuppc/usr/share/backuppc/conf
+install --mode=644 debian/backuppc/etc/backuppc/config.pl debian/backuppc/usr/share/backuppc/conf/
+rm -rf debian/backuppc/etc/backuppc/config.pl
+mkdir debian/backuppc/var/lib/backuppc/conf
+(cd debian/backuppc/var/lib/backuppc/conf; ln -s ../../../../etc/backuppc/config.pl )
+dh_testdir
+dh_testroot
+dh_installdocs 
+dh_installexamples debian/examples/*
+mv -f debian/backuppc/usr/share/backuppc/share/doc/* debian/backuppc/usr/share/doc/backuppc/
+mv debian/backuppc/usr/share/doc/backuppc/BackupPC/* debian/backuppc/usr/share/doc/backuppc
+rmdir debian/backuppc/usr/share/doc/backuppc/BackupPC
+mkdir debian/backuppc/usr/share/backuppc/share/doc/BackupPC
+(cd debian/backuppc/usr/share/backuppc/share/doc/BackupPC; ln -s ../../../../doc/backuppc/BackupPC.html)
+dh_installmenu
+dh_installinit
+dh_installcron
+dh_installman backuppc.8
+dh_installinfo
+dh_installchangelogs ChangeLog
+dh_link
+dh_strip
+dh_compress
+dh_fixperms
+dh_installdebconf
+dh_installdeb
+dh_perl /root/backuppc4/BackupPC-4.0.0alpha3/backuppc-4.0.0alpha3/debian/backuppc/usr/share/backuppc/lib/
+dh_shlibdeps
+dh_gencontrol
+dh_md5sums
+dh_builddeb
+dpkg-deb: building package `backuppc' in `../backuppc_4.0.0~alpha3-1_amd64.deb'.
+ dpkg-genchanges  >../backuppc_4.0.0~alpha3-1_amd64.changes
+dpkg-genchanges: including full source code in upload
+ dpkg-source --after-build backuppc-4.0.0alpha3
+dpkg-source: info: unapplying pod2man:-utf8
+dpkg-buildpackage: full upload (original source is included)
+Now running lintian...
+warning: the authors of lintian do not recommend running it with root privileges!
+W: backuppc: new-package-should-close-itp-bug
+W: backuppc: virtual-package-depends-without-real-package-depends depends: libcompress-zlib-perl
+W: backuppc: manpage-has-errors-from-man usr/share/man/man8/backuppc.8.gz 73: warning: macro `SH' not defined
+W: backuppc: maintainer-script-ignores-errors postrm
+W: backuppc: maintainer-script-ignores-errors postinst
+Finished running lintian.

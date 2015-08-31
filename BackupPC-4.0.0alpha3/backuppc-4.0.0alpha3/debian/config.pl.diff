@@ -1,0 +1,97 @@
+--- config.pl   2005-03-03 23:39:20.000000000 +0100
++++ debian/backuppc/etc/backuppc/config.pl      2005-03-03 18:55:02.000000000 +0100
+@@ -41,7 +41,10 @@
+ #
+ # Host name on which the BackupPC server is running.
+ #
+-$Conf{ServerHost} = 'XXXXXX';
++$ENV{'PATH'} = '/bin:/usr/bin';
++delete @ENV{'IFS', 'CDPATH', 'ENV', 'BASH_ENV'};
++$Conf{ServerHost} = `hostname`;
++chomp($Conf{ServerHost});
+ 
+ #
+ # TCP port number on which the BackupPC server listens for and accepts
+@@ -259,7 +262,7 @@
+ # Full path to various commands for archiving
+ #
+ $Conf{SplitPath} = '/usr/bin/split';
+-$Conf{ParPath}   = '/usr/bin/par2';
++$Conf{ParPath}   = '/usr/bin/par2' if -x '/usr/bin/par2';
+ $Conf{CatPath}   = '/bin/cat';
+ $Conf{GzipPath}  = '/bin/gzip';
+ $Conf{Bzip2Path} = '/bin/bzip2';
+@@ -807,7 +810,7 @@
+ #                to permanent media, such as tape, CDR or DVD.
+ #               
+ #
+-$Conf{XferMethod} = 'smb';
++$Conf{XferMethod} = 'rsyncd';
+ 
+ #
+ # Level of verbosity in Xfer log files.  0 means be quiet, 1 will give
+@@ -903,7 +906,7 @@
+ #
+ # This setting only matters if $Conf{XferMethod} = 'smb'.
+ #
+-$Conf{SmbClientPath} = '/usr/bin/smbclient';
++$Conf{SmbClientPath} = '';
+ 
+ #
+ # Command to run smbclient for a full dump.
+@@ -1479,7 +1482,7 @@
+ # Full path for ssh. Security caution: normal users should not
+ # allowed to write to this file or directory.
+ #
+-$Conf{SshPath} = '/usr/bin/ssh';
++$Conf{SshPath} = '/usr/bin/ssh' if -x '/usr/bin/ssh';
+ 
+ #
+ # Full path for nmblookup. Security caution: normal users should not
+@@ -1488,7 +1491,7 @@
+ # nmblookup is from the Samba distribution. nmblookup is used to get the
+ # netbios name, necessary for DHCP hosts.
+ #
+-$Conf{NmbLookupPath} = '/usr/bin/nmblookup';
++$Conf{NmbLookupPath} = '';
+ 
+ #
+ # NmbLookup command.  Given an IP address, does an nmblookup on that
+@@ -1931,8 +1934,8 @@
+ #    $Conf{CgiAdminUsers}     = 'craig celia';
+ #    --> administrative users are only craig and celia'.
+ #
+-$Conf{CgiAdminUserGroup} = '';
+-$Conf{CgiAdminUsers}     = '';
++$Conf{CgiAdminUserGroup} = 'backuppc';
++$Conf{CgiAdminUsers}     = 'backuppc';
+ 
+ #
+ # TCP port number of the SCGI server.  A negative value disables the
+@@ -1963,7 +1966,7 @@
+ # Full URL of the BackupPC_Admin CGI script, or the configured path
+ # for SCGI.  Used for links in email messages.
+ #
+-$Conf{CgiURL} = 'http://XXXXXX/cgi-bin/BackupPC_Admin';
++$Conf{CgiURL} = 'http://'.$Conf{ServerHost}.'/backuppc/index.cgi';
+ 
+ #
+ # Full path to the rrdtool command.  If available, graphs of pool usage
+@@ -1972,7 +1975,7 @@
+ # Security caution: normal users should not allowed to write to this file
+ # or directory.
+ #
+-$Conf{RrdToolPath} = '';
++$Conf{RrdToolPath} = '/usr/bin/rrdtool';
+ 
+ #   
+ # Language to use.  See lib/BackupPC/Lang for the list of supported
+@@ -2014,7 +2017,7 @@
+ # dates (MM/DD), a value of 2 uses full YYYY-MM-DD format, and zero
+ # for international dates (DD/MM).
+ #
+-$Conf{CgiDateFormatMMDD} = 1;
++$Conf{CgiDateFormatMMDD} = 2;
+ 
+ #
+ # If set, the complete list of hosts appears in the left navigation

@@ -1,0 +1,450 @@
+ dpkg-buildpackage -rfakeroot -D -us -uc
+dpkg-buildpackage: warning: using a gain-root-command while being root
+dpkg-buildpackage: source package rsync-bpc
+dpkg-buildpackage: source version 3.0.9.3-1
+dpkg-buildpackage: source distribution UNRELEASED
+dpkg-buildpackage: source changed by Jack <jack@k-net.pro>
+ dpkg-source --before-build rsync-bpc-3.0.9.3
+dpkg-buildpackage: host architecture amd64
+ fakeroot debian/rules clean
+dh clean
+   dh_testdir
+   dh_auto_clean
+   dh_clean
+ dpkg-source -b rsync-bpc-3.0.9.3
+dpkg-source: info: using source format `3.0 (quilt)'
+dpkg-source: info: building rsync-bpc using existing ./rsync-bpc_3.0.9.3.orig.tar.gz
+dpkg-source: warning: ignoring deletion of file config.h.in, use --include-removal to override
+dpkg-source: warning: ignoring deletion of file proto.h, use --include-removal to override
+dpkg-source: warning: ignoring deletion of file proto.h-tstamp, use --include-removal to override
+dpkg-source: warning: ignoring deletion of file configure.sh, use --include-removal to override
+dpkg-source: info: building rsync-bpc in rsync-bpc_3.0.9.3-1.debian.tar.xz
+dpkg-source: info: building rsync-bpc in rsync-bpc_3.0.9.3-1.dsc
+ debian/rules build
+dh build
+   dh_testdir
+   dh_auto_configure
+make[1]: Entering directory '/root/backuppc4/rsync-bpc/rsync-bpc-3.0.9.3'
+autoconf -o configure.sh
+autoheader && touch config.h.in
+make[1]: Leaving directory '/root/backuppc4/rsync-bpc/rsync-bpc-3.0.9.3'
+configure.sh: WARNING: unrecognized options: --disable-dependency-tracking
+configure.sh: Configuring rsync 3.0.9.3
+checking build system type... x86_64-pc-linux-gnu
+checking host system type... x86_64-pc-linux-gnu
+checking whether to include debugging symbols... yes
+checking for gcc... gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to accept ISO C89... none needed
+checking how to run the C preprocessor... gcc -E
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking for a BSD-compatible install... /usr/bin/install -c
+checking for gcc option to accept ISO C99... -std=gnu99
+checking for gcc -std=gnu99 option to accept ISO Standard C... (cached) -std=gnu99
+checking for remsh... 0
+checking for yodl2man... 0
+checking the group for user "nobody"... nogroup
+checking for broken largefile support... no
+checking for special C compiler options needed for large files... no
+checking for _FILE_OFFSET_BITS value needed for large files... no
+checking ipv6 stack type... linux-glibc
+checking for library containing getaddrinfo... none required
+checking whether to call shutdown on all sockets... no
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking whether byte ordering is bigendian... no
+checking for dirent.h that defines DIR... yes
+checking for library containing opendir... none required
+checking whether time.h and sys/time.h may both be included... yes
+checking for sys/wait.h that is POSIX.1 compatible... yes
+checking sys/fcntl.h usability... yes
+checking sys/fcntl.h presence... yes
+checking for sys/fcntl.h... yes
+checking sys/select.h usability... yes
+checking sys/select.h presence... yes
+checking for sys/select.h... yes
+checking fcntl.h usability... yes
+checking fcntl.h presence... yes
+checking for fcntl.h... yes
+checking sys/time.h usability... yes
+checking sys/time.h presence... yes
+checking for sys/time.h... yes
+checking sys/unistd.h usability... yes
+checking sys/unistd.h presence... yes
+checking for sys/unistd.h... yes
+checking for unistd.h... (cached) yes
+checking utime.h usability... yes
+checking utime.h presence... yes
+checking for utime.h... yes
+checking grp.h usability... yes
+checking grp.h presence... yes
+checking for grp.h... yes
+checking compat.h usability... no
+checking compat.h presence... no
+checking for compat.h... no
+checking sys/param.h usability... yes
+checking sys/param.h presence... yes
+checking for sys/param.h... yes
+checking ctype.h usability... yes
+checking ctype.h presence... yes
+checking for ctype.h... yes
+checking for sys/wait.h... (cached) yes
+checking sys/ioctl.h usability... yes
+checking sys/ioctl.h presence... yes
+checking for sys/ioctl.h... yes
+checking sys/filio.h usability... no
+checking sys/filio.h presence... no
+checking for sys/filio.h... no
+checking for string.h... (cached) yes
+checking for stdlib.h... (cached) yes
+checking sys/socket.h usability... yes
+checking sys/socket.h presence... yes
+checking for sys/socket.h... yes
+checking sys/mode.h usability... no
+checking sys/mode.h presence... no
+checking for sys/mode.h... no
+checking sys/un.h usability... yes
+checking sys/un.h presence... yes
+checking for sys/un.h... yes
+checking sys/attr.h usability... no
+checking sys/attr.h presence... no
+checking for sys/attr.h... no
+checking mcheck.h usability... yes
+checking mcheck.h presence... yes
+checking for mcheck.h... yes
+checking arpa/inet.h usability... yes
+checking arpa/inet.h presence... yes
+checking for arpa/inet.h... yes
+checking arpa/nameser.h usability... yes
+checking arpa/nameser.h presence... yes
+checking for arpa/nameser.h... yes
+checking locale.h usability... yes
+checking locale.h presence... yes
+checking for locale.h... yes
+checking netdb.h usability... yes
+checking netdb.h presence... yes
+checking for netdb.h... yes
+checking malloc.h usability... yes
+checking malloc.h presence... yes
+checking for malloc.h... yes
+checking float.h usability... yes
+checking float.h presence... yes
+checking for float.h... yes
+checking limits.h usability... yes
+checking limits.h presence... yes
+checking for limits.h... yes
+checking iconv.h usability... yes
+checking iconv.h presence... yes
+checking for iconv.h... yes
+checking libcharset.h usability... no
+checking libcharset.h presence... no
+checking for libcharset.h... no
+checking langinfo.h usability... yes
+checking langinfo.h presence... yes
+checking for langinfo.h... yes
+checking sys/acl.h usability... no
+checking sys/acl.h presence... no
+checking for sys/acl.h... no
+checking acl/libacl.h usability... no
+checking acl/libacl.h presence... no
+checking for acl/libacl.h... no
+checking attr/xattr.h usability... no
+checking attr/xattr.h presence... no
+checking for attr/xattr.h... no
+checking sys/xattr.h usability... yes
+checking sys/xattr.h presence... yes
+checking for sys/xattr.h... yes
+checking sys/extattr.h usability... no
+checking sys/extattr.h presence... no
+checking for sys/extattr.h... no
+checking popt.h usability... no
+checking popt.h presence... no
+checking for popt.h... no
+checking popt/popt.h usability... no
+checking popt/popt.h presence... no
+checking for popt/popt.h... no
+checking netinet/in_systm.h usability... yes
+checking netinet/in_systm.h presence... yes
+checking for netinet/in_systm.h... yes
+checking netinet/ip.h usability... yes
+checking netinet/ip.h presence... yes
+checking for netinet/ip.h... yes
+checking whether sys/types.h defines makedev... yes
+checking if makedev takes 3 args... no
+checking size of int... 4
+checking size of long... 8
+checking size of long long... 8
+checking size of short... 2
+checking size of int16_t... 2
+checking size of uint16_t... 2
+checking size of int32_t... 4
+checking size of uint32_t... 4
+checking size of int64_t... 8
+checking size of off_t... 8
+checking size of off64_t... 8
+checking size of time_t... 8
+checking for inline... inline
+checking for long double with more range or precision than double... yes
+checking return type of signal handlers... void
+checking for uid_t in sys/types.h... yes
+checking for mode_t... yes
+checking for off_t... yes
+checking for size_t... yes
+checking for pid_t... yes
+checking for id_t... yes
+checking type of array argument to getgroups... gid_t
+checking for struct stat.st_rdev... yes
+checking for socklen_t... yes
+checking for errno in errno.h... yes
+checking for connect... yes
+checking for library containing inet_ntop... none required
+checking for library containing iconv_open... none required
+checking for library containing libiconv_open... no
+checking for iconv declaration... 
+         extern size_t iconv (iconv_t cd, char * *inbuf, size_t *inbytesleft, char * *outbuf, size_t *outbytesleft);
+checking for inet_ntop... yes
+checking for inet_pton... yes
+checking for struct addrinfo... yes
+checking for struct sockaddr_storage... yes
+checking whether defines needed by getaddrinfo exist... yes
+checking for getaddrinfo... yes
+checking for struct sockaddr.sa_len... no
+checking for struct sockaddr_in.sin_len... no
+checking for struct sockaddr_un.sun_len... no
+checking for struct sockaddr_in6.sin6_scope_id... yes
+checking for struct stat64... yes
+checking for strcasecmp... yes
+checking for aclsort... no
+checking for aclsort in -lsec... no
+checking for utime.h... (cached) yes
+checking whether utime accepts a null argument... yes
+checking for size_t... (cached) yes
+checking for working alloca.h... yes
+checking for alloca... yes
+checking for waitpid... yes
+checking for wait4... yes
+checking for getcwd... yes
+checking for strdup... yes
+checking for chown... yes
+checking for chmod... yes
+checking for lchmod... no
+checking for mknod... yes
+checking for mkfifo... yes
+checking for fchmod... yes
+checking for fstat... yes
+checking for ftruncate... yes
+checking for strchr... yes
+checking for readlink... yes
+checking for link... yes
+checking for utime... yes
+checking for utimes... yes
+checking for lutimes... yes
+checking for strftime... yes
+checking for memmove... yes
+checking for lchown... yes
+checking for vsnprintf... yes
+checking for snprintf... yes
+checking for vasprintf... yes
+checking for asprintf... yes
+checking for setsid... yes
+checking for strpbrk... yes
+checking for strlcat... no
+checking for strlcpy... no
+checking for strtol... yes
+checking for mallinfo... yes
+checking for getgroups... yes
+checking for setgroups... yes
+checking for geteuid... yes
+checking for getegid... yes
+checking for setlocale... yes
+checking for setmode... no
+checking for open64... yes
+checking for lseek64... yes
+checking for mkstemp64... yes
+checking for mtrace... yes
+checking for va_copy... no
+checking for __va_copy... no
+checking for seteuid... yes
+checking for strerror... yes
+checking for putenv... yes
+checking for iconv_open... yes
+checking for locale_charset... no
+checking for nl_langinfo... yes
+checking for getxattr... yes
+checking for extattr_get_link... no
+checking for sigaction... yes
+checking for sigprocmask... yes
+checking for setattrlist... no
+checking for utimensat... yes
+checking for getpgrp... yes
+checking for tcgetpgrp... yes
+checking whether getpgrp requires zero arguments... yes
+checking whether chown() modifies symlinks... no
+checking whether link() can hard-link symlinks... yes
+checking whether link() can hard-link special files... yes
+checking for working socketpair... yes
+checking for poptGetContext in -lpopt... no
+checking whether to use included libpopt... ./popt
+checking for unsigned char... yes
+checking for broken readdir... no
+checking for utimbuf... yes
+checking if gettimeofday takes tz argument... yes
+checking for C99 vsnprintf... yes
+checking for secure mkstemp... yes
+checking if mknod creates FIFOs... yes
+checking if mknod creates sockets... yes
+checking whether -c -o works... yes
+checking for _acl... no
+checking for __acl... no
+checking for _facl... no
+checking for __facl... no
+checking whether to support ACLs... running tests:
+checking for acl_get_file in -lacl... no
+checking for ACL support... no
+checking ACL test results... No ACL support found
+checking whether to support extended attributes... Using Linux xattrs
+configure.sh: creating ./config.status
+config.status: creating Makefile
+config.status: creating lib/dummy
+config.status: creating zlib/dummy
+config.status: creating popt/dummy
+config.status: creating shconfig
+config.status: creating config.h
+configure.sh: WARNING: unrecognized options: --disable-dependency-tracking
+
+    rsync_bpc 3.0.9.3 configuration successful
+
+   dh_auto_build
+make[1]: Entering directory '/root/backuppc4/rsync-bpc/rsync-bpc-3.0.9.3'
+perl ./mkproto.pl ./*.c ./lib/compat.c
+gcc -std=gnu99 -I. -I. -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -DHAVE_CONFIG_H -Wall -W -I./popt -D_FORTIFY_SOURCE=2 -c flist.c -o flist.o
+gcc -std=gnu99 -I. -I. -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -DHAVE_CONFIG_H -Wall -W -I./popt -D_FORTIFY_SOURCE=2 -c rsync.c -o rsync.o
+gcc -std=gnu99 -I. -I. -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -DHAVE_CONFIG_H -Wall -W -I./popt -D_FORTIFY_SOURCE=2 -c generator.c -o generator.o
+gcc -std=gnu99 -I. -I. -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -DHAVE_CONFIG_H -Wall -W -I./popt -D_FORTIFY_SOURCE=2 -c receiver.c -o receiver.o
+gcc -std=gnu99 -I. -I. -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -DHAVE_CONFIG_H -Wall -W -I./popt -D_FORTIFY_SOURCE=2 -c cleanup.c -o cleanup.o
+gcc -std=gnu99 -I. -I. -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -DHAVE_CONFIG_H -Wall -W -I./popt -D_FORTIFY_SOURCE=2 -c sender.c -o sender.o
+gcc -std=gnu99 -I. -I. -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -DHAVE_CONFIG_H -Wall -W -I./popt -D_FORTIFY_SOURCE=2 -c exclude.c -o exclude.o
+gcc -std=gnu99 -I. -I. -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -DHAVE_CONFIG_H -Wall -W -I./popt -D_FORTIFY_SOURCE=2 -c util.c -o util.o
+gcc -std=gnu99 -I. -I. -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -DHAVE_CONFIG_H -Wall -W -I./popt -D_FORTIFY_SOURCE=2 -c main.c -o main.o
+gcc -std=gnu99 -I. -I. -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -DHAVE_CONFIG_H -Wall -W -I./popt -D_FORTIFY_SOURCE=2 -c checksum.c -o checksum.o
+gcc -std=gnu99 -I. -I. -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -DHAVE_CONFIG_H -Wall -W -I./popt -D_FORTIFY_SOURCE=2 -c match.c -o match.o
+gcc -std=gnu99 -I. -I. -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -DHAVE_CONFIG_H -Wall -W -I./popt -D_FORTIFY_SOURCE=2 -c syscall.c -o syscall.o
+gcc -std=gnu99 -I. -I. -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -DHAVE_CONFIG_H -Wall -W -I./popt -D_FORTIFY_SOURCE=2 -c log.c -o log.o
+gcc -std=gnu99 -I. -I. -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -DHAVE_CONFIG_H -Wall -W -I./popt -D_FORTIFY_SOURCE=2 -c backup.c -o backup.o
+gcc -std=gnu99 -I. -I. -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -DHAVE_CONFIG_H -Wall -W -I./popt -D_FORTIFY_SOURCE=2 -c options.c -o options.o
+gcc -std=gnu99 -I. -I. -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -DHAVE_CONFIG_H -Wall -W -I./popt -D_FORTIFY_SOURCE=2 -c io.c -o io.o
+gcc -std=gnu99 -I. -I. -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -DHAVE_CONFIG_H -Wall -W -I./popt -D_FORTIFY_SOURCE=2 -c compat.c -o compat.o
+gcc -std=gnu99 -I. -I. -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -DHAVE_CONFIG_H -Wall -W -I./popt -D_FORTIFY_SOURCE=2 -c hlink.c -o hlink.o
+gcc -std=gnu99 -I. -I. -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -DHAVE_CONFIG_H -Wall -W -I./popt -D_FORTIFY_SOURCE=2 -c token.c -o token.o
+gcc -std=gnu99 -I. -I. -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -DHAVE_CONFIG_H -Wall -W -I./popt -D_FORTIFY_SOURCE=2 -c uidlist.c -o uidlist.o
+gcc -std=gnu99 -I. -I. -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -DHAVE_CONFIG_H -Wall -W -I./popt -D_FORTIFY_SOURCE=2 -c socket.c -o socket.o
+gcc -std=gnu99 -I. -I. -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -DHAVE_CONFIG_H -Wall -W -I./popt -D_FORTIFY_SOURCE=2 -c hashtable.c -o hashtable.o
+gcc -std=gnu99 -I. -I. -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -DHAVE_CONFIG_H -Wall -W -I./popt -D_FORTIFY_SOURCE=2 -c fileio.c -o fileio.o
+gcc -std=gnu99 -I. -I. -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -DHAVE_CONFIG_H -Wall -W -I./popt -D_FORTIFY_SOURCE=2 -c batch.c -o batch.o
+gcc -std=gnu99 -I. -I. -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -DHAVE_CONFIG_H -Wall -W -I./popt -D_FORTIFY_SOURCE=2 -c clientname.c -o clientname.o
+gcc -std=gnu99 -I. -I. -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -DHAVE_CONFIG_H -Wall -W -I./popt -D_FORTIFY_SOURCE=2 -c chmod.c -o chmod.o
+gcc -std=gnu99 -I. -I. -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -DHAVE_CONFIG_H -Wall -W -I./popt -D_FORTIFY_SOURCE=2 -c acls.c -o acls.o
+gcc -std=gnu99 -I. -I. -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -DHAVE_CONFIG_H -Wall -W -I./popt -D_FORTIFY_SOURCE=2 -c xattrs.c -o xattrs.o
+gcc -std=gnu99 -I. -I. -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -DHAVE_CONFIG_H -Wall -W -I./popt -D_FORTIFY_SOURCE=2 -c progress.c -o progress.o
+gcc -std=gnu99 -I. -I. -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -DHAVE_CONFIG_H -Wall -W -I./popt -D_FORTIFY_SOURCE=2 -c pipe.c -o pipe.o
+gcc -std=gnu99 -I. -I. -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -DHAVE_CONFIG_H -Wall -W -I./popt -D_FORTIFY_SOURCE=2 -c params.c -o params.o
+gcc -std=gnu99 -I. -I. -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -DHAVE_CONFIG_H -Wall -W -I./popt -D_FORTIFY_SOURCE=2 -c loadparm.c -o loadparm.o
+gcc -std=gnu99 -I. -I. -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -DHAVE_CONFIG_H -Wall -W -I./popt -D_FORTIFY_SOURCE=2 -c clientserver.c -o clientserver.o
+gcc -std=gnu99 -I. -I. -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -DHAVE_CONFIG_H -Wall -W -I./popt -D_FORTIFY_SOURCE=2 -c access.c -o access.o
+gcc -std=gnu99 -I. -I. -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -DHAVE_CONFIG_H -Wall -W -I./popt -D_FORTIFY_SOURCE=2 -c connection.c -o connection.o
+gcc -std=gnu99 -I. -I. -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -DHAVE_CONFIG_H -Wall -W -I./popt -D_FORTIFY_SOURCE=2 -c authenticate.c -o authenticate.o
+gcc -std=gnu99 -I. -I. -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -DHAVE_CONFIG_H -Wall -W -I./popt -D_FORTIFY_SOURCE=2 -c lib/wildmatch.c -o lib/wildmatch.o
+gcc -std=gnu99 -I. -I. -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -DHAVE_CONFIG_H -Wall -W -I./popt -D_FORTIFY_SOURCE=2 -c lib/compat.c -o lib/compat.o
+gcc -std=gnu99 -I. -I. -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -DHAVE_CONFIG_H -Wall -W -I./popt -D_FORTIFY_SOURCE=2 -c lib/snprintf.c -o lib/snprintf.o
+gcc -std=gnu99 -I. -I. -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -DHAVE_CONFIG_H -Wall -W -I./popt -D_FORTIFY_SOURCE=2 -c lib/mdfour.c -o lib/mdfour.o
+gcc -std=gnu99 -I. -I. -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -DHAVE_CONFIG_H -Wall -W -I./popt -D_FORTIFY_SOURCE=2 -c lib/md5.c -o lib/md5.o
+gcc -std=gnu99 -I. -I. -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -DHAVE_CONFIG_H -Wall -W -I./popt -D_FORTIFY_SOURCE=2 -c lib/permstring.c -o lib/permstring.o
+gcc -std=gnu99 -I. -I. -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -DHAVE_CONFIG_H -Wall -W -I./popt -D_FORTIFY_SOURCE=2 -c lib/pool_alloc.c -o lib/pool_alloc.o
+gcc -std=gnu99 -I. -I. -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -DHAVE_CONFIG_H -Wall -W -I./popt -D_FORTIFY_SOURCE=2 -c lib/sysacls.c -o lib/sysacls.o
+gcc -std=gnu99 -I. -I. -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -DHAVE_CONFIG_H -Wall -W -I./popt -D_FORTIFY_SOURCE=2 -c lib/sysxattrs.c -o lib/sysxattrs.o
+gcc -std=gnu99 -I. -I. -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -DHAVE_CONFIG_H -Wall -W -I./popt -D_FORTIFY_SOURCE=2 -c zlib/deflate.c -o zlib/deflate.o
+gcc -std=gnu99 -I. -I. -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -DHAVE_CONFIG_H -Wall -W -I./popt -D_FORTIFY_SOURCE=2 -c zlib/inffast.c -o zlib/inffast.o
+gcc -std=gnu99 -I. -I. -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -DHAVE_CONFIG_H -Wall -W -I./popt -D_FORTIFY_SOURCE=2 -c zlib/inflate.c -o zlib/inflate.o
+gcc -std=gnu99 -I. -I. -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -DHAVE_CONFIG_H -Wall -W -I./popt -D_FORTIFY_SOURCE=2 -c zlib/inftrees.c -o zlib/inftrees.o
+gcc -std=gnu99 -I. -I. -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -DHAVE_CONFIG_H -Wall -W -I./popt -D_FORTIFY_SOURCE=2 -c zlib/trees.c -o zlib/trees.o
+gcc -std=gnu99 -I. -I. -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -DHAVE_CONFIG_H -Wall -W -I./popt -D_FORTIFY_SOURCE=2 -c zlib/zutil.c -o zlib/zutil.o
+gcc -std=gnu99 -I. -I. -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -DHAVE_CONFIG_H -Wall -W -I./popt -D_FORTIFY_SOURCE=2 -c zlib/adler32.c -o zlib/adler32.o
+gcc -std=gnu99 -I. -I. -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -DHAVE_CONFIG_H -Wall -W -I./popt -D_FORTIFY_SOURCE=2 -c zlib/compress.c -o zlib/compress.o
+gcc -std=gnu99 -I. -I. -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -DHAVE_CONFIG_H -Wall -W -I./popt -D_FORTIFY_SOURCE=2 -c zlib/crc32.c -o zlib/crc32.o
+gcc -std=gnu99 -I. -I. -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -DHAVE_CONFIG_H -Wall -W -I./popt -D_FORTIFY_SOURCE=2 -c bpc_sysCalls.c -o bpc_sysCalls.o
+gcc -std=gnu99 -I. -I. -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -DHAVE_CONFIG_H -Wall -W -I./popt -D_FORTIFY_SOURCE=2 -c backuppc/bpc_attrib.c -o backuppc/bpc_attrib.o
+gcc -std=gnu99 -I. -I. -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -DHAVE_CONFIG_H -Wall -W -I./popt -D_FORTIFY_SOURCE=2 -c backuppc/bpc_dirOps.c -o backuppc/bpc_dirOps.o
+gcc -std=gnu99 -I. -I. -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -DHAVE_CONFIG_H -Wall -W -I./popt -D_FORTIFY_SOURCE=2 -c backuppc/bpc_hashtable.c -o backuppc/bpc_hashtable.o
+gcc -std=gnu99 -I. -I. -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -DHAVE_CONFIG_H -Wall -W -I./popt -D_FORTIFY_SOURCE=2 -c backuppc/bpc_poolWrite.c -o backuppc/bpc_poolWrite.o
+In file included from /usr/include/unistd.h:1148:0,
+                 from ./rsync.h:312,
+                 from backuppc/backuppc.h:24,
+                 from backuppc/bpc_poolWrite.c:20:
+In function ‘read’,
+    inlined from ‘bpc_poolWrite_copyToPool’ at backuppc/bpc_poolWrite.c:664:22:
+/usr/include/x86_64-linux-gnu/bits/unistd.h:42:2: warning: call to ‘__read_chk_warn’ declared with attribute warning: read called with bigger length than size of the destination buffer
+  return __read_chk_warn (__fd, __buf, __nbytes, __bos0 (__buf));
+  ^
+gcc -std=gnu99 -I. -I. -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -DHAVE_CONFIG_H -Wall -W -I./popt -D_FORTIFY_SOURCE=2 -c backuppc/bpc_attribCache.c -o backuppc/bpc_attribCache.o
+gcc -std=gnu99 -I. -I. -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -DHAVE_CONFIG_H -Wall -W -I./popt -D_FORTIFY_SOURCE=2 -c backuppc/bpc_fileZIO.c -o backuppc/bpc_fileZIO.o
+gcc -std=gnu99 -I. -I. -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -DHAVE_CONFIG_H -Wall -W -I./popt -D_FORTIFY_SOURCE=2 -c backuppc/bpc_lib.c -o backuppc/bpc_lib.o
+gcc -std=gnu99 -I. -I. -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -DHAVE_CONFIG_H -Wall -W -I./popt -D_FORTIFY_SOURCE=2 -c backuppc/bpc_refCount.c -o backuppc/bpc_refCount.o
+gcc -std=gnu99 -I. -I. -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -DHAVE_CONFIG_H -Wall -W -I./popt -D_FORTIFY_SOURCE=2 -c popt/findme.c -o popt/findme.o
+gcc -std=gnu99 -I. -I. -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -DHAVE_CONFIG_H -Wall -W -I./popt -D_FORTIFY_SOURCE=2 -c popt/popt.c -o popt/popt.o
+gcc -std=gnu99 -I. -I. -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -DHAVE_CONFIG_H -Wall -W -I./popt -D_FORTIFY_SOURCE=2 -c popt/poptconfig.c -o popt/poptconfig.o
+gcc -std=gnu99 -I. -I. -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -DHAVE_CONFIG_H -Wall -W -I./popt -D_FORTIFY_SOURCE=2 -c popt/popthelp.c -o popt/popthelp.o
+gcc -std=gnu99 -I. -I. -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -DHAVE_CONFIG_H -Wall -W -I./popt -D_FORTIFY_SOURCE=2 -c popt/poptparse.c -o popt/poptparse.o
+gcc -std=gnu99 -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -DHAVE_CONFIG_H -Wall -W -I./popt -Wl,-z,relro -o rsync_bpc flist.o rsync.o generator.o receiver.o cleanup.o sender.o exclude.o util.o main.o checksum.o match.o syscall.o log.o backup.o options.o io.o compat.o hlink.o token.o uidlist.o socket.o hashtable.o fileio.o batch.o clientname.o chmod.o acls.o xattrs.o progress.o pipe.o params.o loadparm.o clientserver.o access.o connection.o authenticate.o lib/wildmatch.o lib/compat.o lib/snprintf.o lib/mdfour.o lib/md5.o lib/permstring.o lib/pool_alloc.o lib/sysacls.o lib/sysxattrs.o  zlib/deflate.o zlib/inffast.o zlib/inflate.o zlib/inftrees.o zlib/trees.o zlib/zutil.o zlib/adler32.o zlib/compress.o zlib/crc32.o bpc_sysCalls.o backuppc/bpc_attrib.o backuppc/bpc_dirOps.o backuppc/bpc_hashtable.o backuppc/bpc_poolWrite.o backuppc/bpc_attribCache.o backuppc/bpc_fileZIO.o backuppc/bpc_lib.o backuppc/bpc_refCount.o popt/findme.o  popt/popt.o  popt/poptconfig.o popt/popthelp.o popt/poptparse.o 
+make[1]: Leaving directory '/root/backuppc4/rsync-bpc/rsync-bpc-3.0.9.3'
+   dh_auto_test
+ fakeroot debian/rules binary
+dh binary
+   dh_auto_test
+   dh_testroot
+   dh_prep
+   dh_auto_install
+make[1]: Entering directory '/root/backuppc4/rsync-bpc/rsync-bpc-3.0.9.3'
+mkdir -p /root/backuppc4/rsync-bpc/rsync-bpc-3.0.9.3/debian/rsync-bpc/usr/bin
+/usr/bin/install -c  -m 755 rsync_bpc /root/backuppc4/rsync-bpc/rsync-bpc-3.0.9.3/debian/rsync-bpc/usr/bin
+make[1]: Leaving directory '/root/backuppc4/rsync-bpc/rsync-bpc-3.0.9.3'
+   dh_installdocs
+   dh_installchangelogs
+   dh_perl
+   dh_link
+   dh_compress
+   dh_fixperms
+   dh_strip
+   dh_makeshlibs
+   dh_shlibdeps
+   dh_installdeb
+   dh_gencontrol
+   dh_md5sums
+   dh_builddeb
+dpkg-deb: building package `rsync-bpc' in `../rsync-bpc_3.0.9.3-1_amd64.deb'.
+ dpkg-genchanges  >../rsync-bpc_3.0.9.3-1_amd64.changes
+dpkg-genchanges: including full source code in upload
+ dpkg-source --after-build rsync-bpc-3.0.9.3
+dpkg-buildpackage: full upload (original source is included)
+Now running lintian...
+warning: the authors of lintian do not recommend running it with root privileges!
+W: rsync-bpc source: outdated-autotools-helper-file config.sub 2006-07-02
+W: rsync-bpc source: outdated-autotools-helper-file config.guess 2006-07-02
+E: rsync-bpc: embedded-library usr/bin/rsync_bpc: zlib
+W: rsync-bpc: new-package-should-close-itp-bug
+W: rsync-bpc: binary-without-manpage usr/bin/rsync_bpc
+Finished running lintian.

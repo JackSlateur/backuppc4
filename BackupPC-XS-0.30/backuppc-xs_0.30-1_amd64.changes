@@ -1,0 +1,31 @@
+Format: 1.8
+Date: Wed, 19 Aug 2015 18:36:25 +0200
+Source: backuppc-xs
+Binary: backuppc-xs
+Architecture: source amd64
+Version: 0.30-1
+Distribution: UNRELEASED
+Urgency: medium
+Maintainer: Jack <jack@k-net.pro>
+Changed-By: jack <jack@k-net.pro>
+Description:
+ backuppc-xs - high-performance, enterprise-grade system for backing up PCs
+Changes:
+ backuppc-xs (0.30-1) UNRELEASED; urgency=medium
+ .
+   * Initial release.
+Checksums-Sha1:
+ 18c4ec3dd2973db235dcc9b6d02faf976eda65b6 791 backuppc-xs_0.30-1.dsc
+ 1863b94d5662348fd7e9ccc3334a6adab214a779 281325 backuppc-xs_0.30.orig.tar.gz
+ 878683b8131b1b2d4cd9620daf3243af7a1e9848 1808 backuppc-xs_0.30-1.debian.tar.xz
+ 68e77b19a86ab9a92ce640c0cb7b228f183d28e9 86460 backuppc-xs_0.30-1_amd64.deb
+Checksums-Sha256:
+ 9382bdb54f16b0f56d5549860d7173ac436fe7645e4f6cd405d6294c7d1eb19a 791 backuppc-xs_0.30-1.dsc
+ a0a987d98624e17de7890b2cb8ceedf5bd9c73786c1b32e3a2b65643d5792f79 281325 backuppc-xs_0.30.orig.tar.gz
+ 9b426a34503a110ff5ace96b7326514dadb5e62945627a88fadb19177e3f3272 1808 backuppc-xs_0.30-1.debian.tar.xz
+ 1ed01721aac69b1bbbc45ae346ea290b8bd7f4af0d2c121ce5974d72df39c717 86460 backuppc-xs_0.30-1_amd64.deb
+Files:
+ 9f907b11c92ea0e5f6c2eafd6217b28f 791 utils optional backuppc-xs_0.30-1.dsc
+ 9ab6acd4ae62a7446ba1cb823186e1d2 281325 utils optional backuppc-xs_0.30.orig.tar.gz
+ 23af644ad166fcea0f85f321b7c9903f 1808 utils optional backuppc-xs_0.30-1.debian.tar.xz
+ 3eab87e73138d5f271c7b5185cba259a 86460 utils optional backuppc-xs_0.30-1_amd64.deb

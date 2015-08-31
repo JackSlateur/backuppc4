@@ -1,0 +1,6 @@
+2b8bf854d01c76171fab9327e514b97f  usr/lib/x86_64-linux-gnu/perl5/5.20/BackupPC/XS.pm
+e650b0e2702ddb0de570ec664e2148fa  usr/lib/x86_64-linux-gnu/perl5/5.20/auto/BackupPC/XS/XS.so
+542caf10d4e74cbd85ee27277ccc80fb  usr/share/doc/backuppc-xs/changelog.Debian.gz
+4211be67a10811ad15800fd5b56a5d0e  usr/share/doc/backuppc-xs/changelog.gz
+7ceb65302435a6c4448e1164735f9e55  usr/share/doc/backuppc-xs/copyright
+f4f404254aa3612077434f703528a29b  usr/share/man/man3/BackupPC::XS.3pm.gz

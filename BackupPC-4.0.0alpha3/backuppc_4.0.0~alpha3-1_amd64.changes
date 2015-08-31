@@ -1,0 +1,31 @@
+Format: 1.8
+Date: Wed, 19 Aug 2015 18:47:52 +0200
+Source: backuppc
+Binary: backuppc
+Architecture: source amd64
+Version: 4.0.0~alpha3-1
+Distribution: UNRELEASED
+Urgency: medium
+Maintainer: Jack <jack@k-net.pro>
+Changed-By: Jack <jack@k-net.pro>
+Description:
+ backuppc   - high-performance, enterprise-grade system for backing up PCs
+Changes:
+ backuppc (4.0.0~alpha3-1) UNRELEASED; urgency=medium
+ .
+   * Initial release.
+Checksums-Sha1:
+ 7faac7f22b6dfd5f49bd49838b1a8d9c3d8dccdc 823 backuppc_4.0.0~alpha3-1.dsc
+ 4f41d663dcee6f39a2e46ad652958f2bb60dc393 583970 backuppc_4.0.0~alpha3.orig.tar.gz
+ 09f2a7255f69349fbfc0c6f4d020d304edf90687 19092 backuppc_4.0.0~alpha3-1.debian.tar.xz
+ fc11679ed7b77a1c671dd84ada43551fa9e978dd 476532 backuppc_4.0.0~alpha3-1_amd64.deb
+Checksums-Sha256:
+ 9ccdc0ed54c9aca2debbaf1ad1814dbef6c207c42fa48e95c9c7e09395732f92 823 backuppc_4.0.0~alpha3-1.dsc
+ 3e63ad375465425f97179152d09e91963cced8b5ca7e400290b81decf83a902e 583970 backuppc_4.0.0~alpha3.orig.tar.gz
+ a31abfa8c9caac0df4adba96f9505460bfba2aa6801cea315dce0faf72da157a 19092 backuppc_4.0.0~alpha3-1.debian.tar.xz
+ 7cd90e56d6bafcbd6bb652b59f5f337c15b02a7ab6a419f0bfd8a50d8318fa8f 476532 backuppc_4.0.0~alpha3-1_amd64.deb
+Files:
+ 134d91ef1ae66c596f719d89a5cac05c 823 utils optional backuppc_4.0.0~alpha3-1.dsc
+ d12edb2cbc54cfe78baed44804a81787 583970 utils optional backuppc_4.0.0~alpha3.orig.tar.gz
+ e1350e0c874843147831c830d97dd033 19092 utils optional backuppc_4.0.0~alpha3-1.debian.tar.xz
+ c2dd49b047668373f14a1d9946cc129a 476532 utils optional backuppc_4.0.0~alpha3-1_amd64.deb

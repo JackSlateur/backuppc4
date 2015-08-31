@@ -1,0 +1,596 @@
+ dpkg-buildpackage -rfakeroot -D -us -uc
+dpkg-buildpackage: warning: using a gain-root-command while being root
+dpkg-buildpackage: source package backuppc-xs
+dpkg-buildpackage: source version 0.30-1
+dpkg-buildpackage: source distribution UNRELEASED
+dpkg-buildpackage: source changed by jack <jack@k-net.pro>
+ dpkg-source --before-build backuppc-xs-0.30
+dpkg-buildpackage: host architecture amd64
+ fakeroot debian/rules clean
+dh clean
+   dh_testdir
+   dh_auto_clean
+make[1]: Entering directory '/root/BackupPC-XS-0.30/backuppc-xs-0.30'
+/usr/bin/perl  -e 'exit 0 unless chdir '\''md5'\'';  system '\''make clean'\'' if -f '\''Makefile'\'';' --
+make[2]: Entering directory '/root/BackupPC-XS-0.30/backuppc-xs-0.30/md5'
+rm -f \
+  md5.bso md5.def \
+  md5.exp md5.x \
+  md5.bs ../blib/arch/auto/BackupPC/XS/md5/extralibs.all \
+  ../blib/arch/auto/BackupPC/XS/md5/extralibs.ld Makefile.aperl \
+  *.a *.o \
+  *perl.core MYMETA.json \
+  MYMETA.yml blibdirs.ts \
+  core core.*perl.*.? \
+  core.[0-9] core.[0-9][0-9] \
+  core.[0-9][0-9][0-9] core.[0-9][0-9][0-9][0-9] \
+  core.[0-9][0-9][0-9][0-9][0-9] libmd5.def \
+  mon.out perl \
+  perl perl.exe \
+  perlmain.c pm_to_blib \
+  pm_to_blib.ts so_locations \
+  tmon.out 
+rm -rf \
+  blib libmd5.a 
+mv Makefile Makefile.old > /dev/null 2>&1
+make[2]: Leaving directory '/root/BackupPC-XS-0.30/backuppc-xs-0.30/md5'
+/usr/bin/perl  -e 'exit 0 unless chdir '\''zlib'\'';  system '\''make clean'\'' if -f '\''Makefile'\'';' --
+make[2]: Entering directory '/root/BackupPC-XS-0.30/backuppc-xs-0.30/zlib'
+rm -f \
+  zlib.bso zlib.def \
+  zlib.exp zlib.x \
+  zlib.bs ../blib/arch/auto/BackupPC/XS/zlib/extralibs.all \
+  ../blib/arch/auto/BackupPC/XS/zlib/extralibs.ld Makefile.aperl \
+  *.a *.o \
+  *perl.core MYMETA.json \
+  MYMETA.yml blibdirs.ts \
+  core core.*perl.*.? \
+  core.[0-9] core.[0-9][0-9] \
+  core.[0-9][0-9][0-9] core.[0-9][0-9][0-9][0-9] \
+  core.[0-9][0-9][0-9][0-9][0-9] libzlib.def \
+  mon.out perl \
+  perl perl.exe \
+  perlmain.c pm_to_blib \
+  pm_to_blib.ts so_locations \
+  tmon.out 
+rm -rf \
+  blib libzlib.a 
+mv Makefile Makefile.old > /dev/null 2>&1
+make[2]: Leaving directory '/root/BackupPC-XS-0.30/backuppc-xs-0.30/zlib'
+rm -f \
+  XS.bso XS.def \
+  XS.exp XS.x \
+  XS.bs blib/arch/auto/BackupPC/XS/extralibs.all \
+  blib/arch/auto/BackupPC/XS/extralibs.ld Makefile.aperl \
+  *.a *.o \
+  *perl.core BackupPC_XS.c \
+  MYMETA.json MYMETA.yml \
+  blibdirs.ts core \
+  core.*perl.*.? core.[0-9] \
+  core.[0-9][0-9] core.[0-9][0-9][0-9] \
+  core.[0-9][0-9][0-9][0-9] core.[0-9][0-9][0-9][0-9][0-9] \
+  libXS.def mon.out \
+  perl perl \
+  perl.exe perlmain.c \
+  pm_to_blib pm_to_blib.ts \
+  so_locations tmon.out 
+rm -rf \
+  blib config.h \
+  config.log config.status 
+mv Makefile Makefile.old > /dev/null 2>&1
+/usr/bin/perl  -e 'chdir '\''md5'\'';  system '\''make -f Makefile.old realclean'\'' if -f '\''Makefile.old'\'';' --
+make[2]: Entering directory '/root/BackupPC-XS-0.30/backuppc-xs-0.30/md5'
+rm -f \
+  md5.bso md5.def \
+  md5.exp md5.x \
+  md5.bs ../blib/arch/auto/BackupPC/XS/md5/extralibs.all \
+  ../blib/arch/auto/BackupPC/XS/md5/extralibs.ld Makefile.aperl \
+  *.a *.o \
+  *perl.core MYMETA.json \
+  MYMETA.yml blibdirs.ts \
+  core core.*perl.*.? \
+  core.[0-9] core.[0-9][0-9] \
+  core.[0-9][0-9][0-9] core.[0-9][0-9][0-9][0-9] \
+  core.[0-9][0-9][0-9][0-9][0-9] libmd5.def \
+  mon.out perl \
+  perl perl.exe \
+  perlmain.c pm_to_blib \
+  pm_to_blib.ts so_locations \
+  tmon.out 
+rm -rf \
+  blib libmd5.a 
+mv Makefile Makefile.old > /dev/null 2>&1
+Makefile.old:467: recipe for target 'clean' failed
+make[2]: [clean] Error 1 (ignored)
+rm -f \
+  Makefile.old md5.o \
+  Makefile 
+rm -rf \
+   
+make[2]: Leaving directory '/root/BackupPC-XS-0.30/backuppc-xs-0.30/md5'
+/usr/bin/perl  -e 'chdir '\''md5'\'';  system '\''make -f Makefile realclean'\'' if -f '\''Makefile'\'';' --
+/usr/bin/perl  -e 'chdir '\''zlib'\'';  system '\''make -f Makefile.old realclean'\'' if -f '\''Makefile.old'\'';' --
+make[2]: Entering directory '/root/BackupPC-XS-0.30/backuppc-xs-0.30/zlib'
+rm -f \
+  zlib.bso zlib.def \
+  zlib.exp zlib.x \
+  zlib.bs ../blib/arch/auto/BackupPC/XS/zlib/extralibs.all \
+  ../blib/arch/auto/BackupPC/XS/zlib/extralibs.ld Makefile.aperl \
+  *.a *.o \
+  *perl.core MYMETA.json \
+  MYMETA.yml blibdirs.ts \
+  core core.*perl.*.? \
+  core.[0-9] core.[0-9][0-9] \
+  core.[0-9][0-9][0-9] core.[0-9][0-9][0-9][0-9] \
+  core.[0-9][0-9][0-9][0-9][0-9] libzlib.def \
+  mon.out perl \
+  perl perl.exe \
+  perlmain.c pm_to_blib \
+  pm_to_blib.ts so_locations \
+  tmon.out 
+rm -rf \
+  blib libzlib.a 
+mv Makefile Makefile.old > /dev/null 2>&1
+Makefile.old:492: recipe for target 'clean' failed
+make[2]: [clean] Error 1 (ignored)
+rm -f \
+  Makefile.old zlib.o \
+  Makefile 
+rm -rf \
+   
+make[2]: Leaving directory '/root/BackupPC-XS-0.30/backuppc-xs-0.30/zlib'
+/usr/bin/perl  -e 'chdir '\''zlib'\'';  system '\''make -f Makefile realclean'\'' if -f '\''Makefile'\'';' --
+rm -f \
+  Makefile Makefile.old \
+  BackupPC_XS.o bpc_attrib.o bpc_attribCache.o bpc_dirOps.o bpc_fileZIO.o bpc_hashtable.o bpc_lib.o bpc_poolWrite.o bpc_refCount.o  
+rm -rf \
+  BackupPC-XS-0.30 
+/usr/bin/perl "-MExtUtils::Manifest=fullcheck" -e fullcheck
+Not in MANIFEST: debian/backuppc-xs.debhelper.log
+Not in MANIFEST: debian/backuppc-xs.substvars
+Not in MANIFEST: debian/backuppc-xs/DEBIAN/control
+Not in MANIFEST: debian/backuppc-xs/DEBIAN/md5sums
+Not in MANIFEST: debian/backuppc-xs/usr/lib/x86_64-linux-gnu/perl5/5.20/auto/BackupPC/XS/XS.so
+Not in MANIFEST: debian/backuppc-xs/usr/lib/x86_64-linux-gnu/perl5/5.20/BackupPC/XS.pm
+Not in MANIFEST: debian/backuppc-xs/usr/share/doc/backuppc-xs/changelog.Debian.gz
+Not in MANIFEST: debian/backuppc-xs/usr/share/doc/backuppc-xs/changelog.gz
+Not in MANIFEST: debian/backuppc-xs/usr/share/doc/backuppc-xs/copyright
+Not in MANIFEST: debian/backuppc-xs/usr/share/man/man3/BackupPC::XS.3pm.gz
+Not in MANIFEST: debian/changelog
+Not in MANIFEST: debian/compat
+Not in MANIFEST: debian/control
+Not in MANIFEST: debian/copyright
+Not in MANIFEST: debian/files
+Not in MANIFEST: debian/rules
+Not in MANIFEST: debian/source/format
+make[1]: Leaving directory '/root/BackupPC-XS-0.30/backuppc-xs-0.30'
+   dh_clean
+ dpkg-source -b backuppc-xs-0.30
+dpkg-source: info: using source format `3.0 (quilt)'
+dpkg-source: info: building backuppc-xs using existing ./backuppc-xs_0.30.orig.tar.gz
+dpkg-source: info: building backuppc-xs in backuppc-xs_0.30-1.debian.tar.xz
+dpkg-source: info: building backuppc-xs in backuppc-xs_0.30-1.dsc
+ debian/rules build
+dh build
+   dh_testdir
+   dh_auto_configure
+Checking if your kit is complete...
+Looks good
+MakeMaker (v6.98)
+Warning (non-fatal): Target 'dynamic' depends on targets in skipped section 'dynamic_lib'
+Warning (non-fatal): Target 'static' depends on targets in skipped section 'static_lib'
+Generating a Unix-style Makefile
+Writing Makefile for BackupPC::XS::md5
+Writing MYMETA.yml and MYMETA.json
+MakeMaker (v6.98)
+Warning (non-fatal): Target 'dynamic' depends on targets in skipped section 'dynamic_lib'
+Warning (non-fatal): Target 'static' depends on targets in skipped section 'static_lib'
+Generating a Unix-style Makefile
+Writing Makefile for BackupPC::XS::zlib
+Writing MYMETA.yml and MYMETA.json
+Generating a Unix-style Makefile
+Writing Makefile for BackupPC::XS
+Writing MYMETA.yml and MYMETA.json
+   dh_auto_build
+make[1]: Entering directory '/root/BackupPC-XS-0.30/backuppc-xs-0.30'
+./configure.sh
+configure.sh: Configuring rsync 3.0.9
+checking build system type... x86_64-unknown-linux-gnu
+checking host system type... x86_64-unknown-linux-gnu
+checking whether to include debugging symbols... yes
+checking for gcc... gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to accept ISO C89... none needed
+checking how to run the C preprocessor... gcc -E
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking for a BSD-compatible install... /usr/bin/install -c
+checking for gcc option to accept ISO C99... -std=gnu99
+checking for gcc -std=gnu99 option to accept ISO Standard C... (cached) -std=gnu99
+checking for remsh... 0
+checking for yodl2man... 0
+checking the group for user "nobody"... nogroup
+checking for broken largefile support... no
+checking for special C compiler options needed for large files... no
+checking for _FILE_OFFSET_BITS value needed for large files... no
+checking ipv6 stack type... linux-glibc
+checking for library containing getaddrinfo... none required
+checking whether to call shutdown on all sockets... no
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking whether byte ordering is bigendian... no
+checking for dirent.h that defines DIR... yes
+checking for library containing opendir... none required
+checking whether time.h and sys/time.h may both be included... yes
+checking for sys/wait.h that is POSIX.1 compatible... yes
+checking sys/fcntl.h usability... yes
+checking sys/fcntl.h presence... yes
+checking for sys/fcntl.h... yes
+checking sys/select.h usability... yes
+checking sys/select.h presence... yes
+checking for sys/select.h... yes
+checking fcntl.h usability... yes
+checking fcntl.h presence... yes
+checking for fcntl.h... yes
+checking sys/time.h usability... yes
+checking sys/time.h presence... yes
+checking for sys/time.h... yes
+checking sys/unistd.h usability... yes
+checking sys/unistd.h presence... yes
+checking for sys/unistd.h... yes
+checking for unistd.h... (cached) yes
+checking utime.h usability... yes
+checking utime.h presence... yes
+checking for utime.h... yes
+checking grp.h usability... yes
+checking grp.h presence... yes
+checking for grp.h... yes
+checking compat.h usability... no
+checking compat.h presence... no
+checking for compat.h... no
+checking sys/param.h usability... yes
+checking sys/param.h presence... yes
+checking for sys/param.h... yes
+checking ctype.h usability... yes
+checking ctype.h presence... yes
+checking for ctype.h... yes
+checking for sys/wait.h... (cached) yes
+checking sys/ioctl.h usability... yes
+checking sys/ioctl.h presence... yes
+checking for sys/ioctl.h... yes
+checking sys/filio.h usability... no
+checking sys/filio.h presence... no
+checking for sys/filio.h... no
+checking for string.h... (cached) yes
+checking for stdlib.h... (cached) yes
+checking sys/socket.h usability... yes
+checking sys/socket.h presence... yes
+checking for sys/socket.h... yes
+checking sys/mode.h usability... no
+checking sys/mode.h presence... no
+checking for sys/mode.h... no
+checking sys/un.h usability... yes
+checking sys/un.h presence... yes
+checking for sys/un.h... yes
+checking sys/attr.h usability... no
+checking sys/attr.h presence... no
+checking for sys/attr.h... no
+checking mcheck.h usability... yes
+checking mcheck.h presence... yes
+checking for mcheck.h... yes
+checking arpa/inet.h usability... yes
+checking arpa/inet.h presence... yes
+checking for arpa/inet.h... yes
+checking arpa/nameser.h usability... yes
+checking arpa/nameser.h presence... yes
+checking for arpa/nameser.h... yes
+checking locale.h usability... yes
+checking locale.h presence... yes
+checking for locale.h... yes
+checking netdb.h usability... yes
+checking netdb.h presence... yes
+checking for netdb.h... yes
+checking malloc.h usability... yes
+checking malloc.h presence... yes
+checking for malloc.h... yes
+checking float.h usability... yes
+checking float.h presence... yes
+checking for float.h... yes
+checking limits.h usability... yes
+checking limits.h presence... yes
+checking for limits.h... yes
+checking iconv.h usability... yes
+checking iconv.h presence... yes
+checking for iconv.h... yes
+checking libcharset.h usability... no
+checking libcharset.h presence... no
+checking for libcharset.h... no
+checking langinfo.h usability... yes
+checking langinfo.h presence... yes
+checking for langinfo.h... yes
+checking sys/acl.h usability... no
+checking sys/acl.h presence... no
+checking for sys/acl.h... no
+checking acl/libacl.h usability... no
+checking acl/libacl.h presence... no
+checking for acl/libacl.h... no
+checking attr/xattr.h usability... no
+checking attr/xattr.h presence... no
+checking for attr/xattr.h... no
+checking sys/xattr.h usability... yes
+checking sys/xattr.h presence... yes
+checking for sys/xattr.h... yes
+checking sys/extattr.h usability... no
+checking sys/extattr.h presence... no
+checking for sys/extattr.h... no
+checking popt.h usability... no
+checking popt.h presence... no
+checking for popt.h... no
+checking popt/popt.h usability... no
+checking popt/popt.h presence... no
+checking for popt/popt.h... no
+checking netinet/in_systm.h usability... yes
+checking netinet/in_systm.h presence... yes
+checking for netinet/in_systm.h... yes
+checking netinet/ip.h usability... yes
+checking netinet/ip.h presence... yes
+checking for netinet/ip.h... yes
+checking whether sys/types.h defines makedev... yes
+checking if makedev takes 3 args... no
+checking size of int... 4
+checking size of long... 8
+checking size of long long... 8
+checking size of short... 2
+checking size of int16_t... 2
+checking size of uint16_t... 2
+checking size of int32_t... 4
+checking size of uint32_t... 4
+checking size of int64_t... 8
+checking size of off_t... 8
+checking size of off64_t... 8
+checking size of time_t... 8
+checking for inline... inline
+checking for long double with more range or precision than double... yes
+checking return type of signal handlers... void
+checking for uid_t in sys/types.h... yes
+checking for mode_t... yes
+checking for off_t... yes
+checking for size_t... yes
+checking for pid_t... yes
+checking for id_t... yes
+checking type of array argument to getgroups... gid_t
+checking for struct stat.st_rdev... yes
+checking for socklen_t... yes
+checking for errno in errno.h... yes
+checking for connect... yes
+checking for library containing inet_ntop... none required
+checking for library containing iconv_open... none required
+checking for library containing libiconv_open... no
+checking for iconv declaration... 
+         extern size_t iconv (iconv_t cd, char * *inbuf, size_t *inbytesleft, char * *outbuf, size_t *outbytesleft);
+checking for inet_ntop... yes
+checking for inet_pton... yes
+checking for struct addrinfo... yes
+checking for struct sockaddr_storage... yes
+checking whether defines needed by getaddrinfo exist... yes
+checking for getaddrinfo... yes
+checking for struct sockaddr.sa_len... no
+checking for struct sockaddr_in.sin_len... no
+checking for struct sockaddr_un.sun_len... no
+checking for struct sockaddr_in6.sin6_scope_id... yes
+checking for struct stat64... yes
+checking for strcasecmp... yes
+checking for aclsort... no
+checking for aclsort in -lsec... no
+checking for utime.h... (cached) yes
+checking whether utime accepts a null argument... yes
+checking for size_t... (cached) yes
+checking for working alloca.h... yes
+checking for alloca... yes
+checking for waitpid... yes
+checking for wait4... yes
+checking for getcwd... yes
+checking for strdup... yes
+checking for chown... yes
+checking for chmod... yes
+checking for lchmod... no
+checking for mknod... yes
+checking for mkfifo... yes
+checking for fchmod... yes
+checking for fstat... yes
+checking for ftruncate... yes
+checking for strchr... yes
+checking for readlink... yes
+checking for link... yes
+checking for utime... yes
+checking for utimes... yes
+checking for lutimes... yes
+checking for strftime... yes
+checking for memmove... yes
+checking for lchown... yes
+checking for vsnprintf... yes
+checking for snprintf... yes
+checking for vasprintf... yes
+checking for asprintf... yes
+checking for setsid... yes
+checking for strpbrk... yes
+checking for strlcat... no
+checking for strlcpy... no
+checking for strtol... yes
+checking for mallinfo... yes
+checking for getgroups... yes
+checking for setgroups... yes
+checking for geteuid... yes
+checking for getegid... yes
+checking for setlocale... yes
+checking for setmode... no
+checking for open64... yes
+checking for lseek64... yes
+checking for mkstemp64... yes
+checking for mtrace... yes
+checking for va_copy... no
+checking for __va_copy... no
+checking for seteuid... yes
+checking for strerror... yes
+checking for putenv... yes
+checking for iconv_open... yes
+checking for locale_charset... no
+checking for nl_langinfo... yes
+checking for getxattr... yes
+checking for extattr_get_link... no
+checking for sigaction... yes
+checking for sigprocmask... yes
+checking for setattrlist... no
+checking for utimensat... yes
+checking for getpgrp... yes
+checking for tcgetpgrp... yes
+checking whether getpgrp requires zero arguments... yes
+checking whether chown() modifies symlinks... no
+checking whether link() can hard-link symlinks... yes
+checking whether link() can hard-link special files... yes
+checking for working socketpair... yes
+checking for poptGetContext in -lpopt... no
+checking whether to use included libpopt... ./popt
+checking for unsigned char... yes
+checking for broken readdir... no
+checking for utimbuf... yes
+checking if gettimeofday takes tz argument... yes
+checking for C99 vsnprintf... yes
+checking for secure mkstemp... yes
+checking if mknod creates FIFOs... yes
+checking if mknod creates sockets... yes
+checking whether -c -o works... yes
+checking for _acl... no
+checking for __acl... no
+checking for _facl... no
+checking for __facl... no
+checking whether to support ACLs... running tests:
+checking for acl_get_file in -lacl... no
+checking for ACL support... no
+checking ACL test results... No ACL support found
+checking whether to support extended attributes... Using Linux xattrs
+configure.sh: creating ./config.status
+config.status: creating config.h
+
+    rsync 3.0.9 configuration successful
+
+cp lib/BackupPC/XS.pm blib/lib/BackupPC/XS.pm
+cd zlib && make 
+make[2]: Entering directory '/root/BackupPC-XS-0.30/backuppc-xs-0.30/zlib'
+cc -c   -D_REENTRANT -D_GNU_SOURCE -DDEBIAN -fwrapv -fno-strict-aliasing -pipe -I/usr/local/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2   -DVERSION=\"\" -DXS_VERSION=\"\" -fPIC "-I/usr/lib/x86_64-linux-gnu/perl/5.20/CORE"   adler32.c
+cc -c   -D_REENTRANT -D_GNU_SOURCE -DDEBIAN -fwrapv -fno-strict-aliasing -pipe -I/usr/local/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2   -DVERSION=\"\" -DXS_VERSION=\"\" -fPIC "-I/usr/lib/x86_64-linux-gnu/perl/5.20/CORE"   compress.c
+cc -c   -D_REENTRANT -D_GNU_SOURCE -DDEBIAN -fwrapv -fno-strict-aliasing -pipe -I/usr/local/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2   -DVERSION=\"\" -DXS_VERSION=\"\" -fPIC "-I/usr/lib/x86_64-linux-gnu/perl/5.20/CORE"   crc32.c
+cc -c   -D_REENTRANT -D_GNU_SOURCE -DDEBIAN -fwrapv -fno-strict-aliasing -pipe -I/usr/local/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2   -DVERSION=\"\" -DXS_VERSION=\"\" -fPIC "-I/usr/lib/x86_64-linux-gnu/perl/5.20/CORE"   deflate.c
+cc -c   -D_REENTRANT -D_GNU_SOURCE -DDEBIAN -fwrapv -fno-strict-aliasing -pipe -I/usr/local/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2   -DVERSION=\"\" -DXS_VERSION=\"\" -fPIC "-I/usr/lib/x86_64-linux-gnu/perl/5.20/CORE"   inffast.c
+cc -c   -D_REENTRANT -D_GNU_SOURCE -DDEBIAN -fwrapv -fno-strict-aliasing -pipe -I/usr/local/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2   -DVERSION=\"\" -DXS_VERSION=\"\" -fPIC "-I/usr/lib/x86_64-linux-gnu/perl/5.20/CORE"   inflate.c
+cc -c   -D_REENTRANT -D_GNU_SOURCE -DDEBIAN -fwrapv -fno-strict-aliasing -pipe -I/usr/local/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2   -DVERSION=\"\" -DXS_VERSION=\"\" -fPIC "-I/usr/lib/x86_64-linux-gnu/perl/5.20/CORE"   inftrees.c
+cc -c   -D_REENTRANT -D_GNU_SOURCE -DDEBIAN -fwrapv -fno-strict-aliasing -pipe -I/usr/local/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2   -DVERSION=\"\" -DXS_VERSION=\"\" -fPIC "-I/usr/lib/x86_64-linux-gnu/perl/5.20/CORE"   trees.c
+cc -c   -D_REENTRANT -D_GNU_SOURCE -DDEBIAN -fwrapv -fno-strict-aliasing -pipe -I/usr/local/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2   -DVERSION=\"\" -DXS_VERSION=\"\" -fPIC "-I/usr/lib/x86_64-linux-gnu/perl/5.20/CORE"   zutil.c
+ar cr libzlib.a adler32.o compress.o crc32.o deflate.o inffast.o inflate.o inftrees.o trees.o zutil.o
+: libzlib.a
+make[2]: Leaving directory '/root/BackupPC-XS-0.30/backuppc-xs-0.30/zlib'
+cd md5 && make 
+make[2]: Entering directory '/root/BackupPC-XS-0.30/backuppc-xs-0.30/md5'
+cc -c   -D_REENTRANT -D_GNU_SOURCE -DDEBIAN -fwrapv -fno-strict-aliasing -pipe -I/usr/local/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2   -DVERSION=\"\" -DXS_VERSION=\"\" -fPIC "-I/usr/lib/x86_64-linux-gnu/perl/5.20/CORE"   md5.c
+ar cr libmd5.a md5.o
+: libmd5.a
+make[2]: Leaving directory '/root/BackupPC-XS-0.30/backuppc-xs-0.30/md5'
+make[2]: Entering directory '/root/BackupPC-XS-0.30/backuppc-xs-0.30/md5'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/root/BackupPC-XS-0.30/backuppc-xs-0.30/md5'
+make[2]: Entering directory '/root/BackupPC-XS-0.30/backuppc-xs-0.30/zlib'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/root/BackupPC-XS-0.30/backuppc-xs-0.30/zlib'
+Running Mkbootstrap for BackupPC::XS ()
+chmod 644 XS.bs
+/usr/bin/perl /usr/share/perl/5.20/ExtUtils/xsubpp  -typemap /usr/share/perl/5.20/ExtUtils/typemap -typemap typemap  BackupPC_XS.xs > BackupPC_XS.xsc && mv BackupPC_XS.xsc BackupPC_XS.c
+cc -c  -I. -D_REENTRANT -D_GNU_SOURCE -DDEBIAN -fwrapv -fno-strict-aliasing -pipe -I/usr/local/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2   -DVERSION=\"0.30\" -DXS_VERSION=\"0.30\" -fPIC "-I/usr/lib/x86_64-linux-gnu/perl/5.20/CORE"   BackupPC_XS.c
+cc -c  -I. -D_REENTRANT -D_GNU_SOURCE -DDEBIAN -fwrapv -fno-strict-aliasing -pipe -I/usr/local/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2   -DVERSION=\"0.30\" -DXS_VERSION=\"0.30\" -fPIC "-I/usr/lib/x86_64-linux-gnu/perl/5.20/CORE"   bpc_attrib.c
+cc -c  -I. -D_REENTRANT -D_GNU_SOURCE -DDEBIAN -fwrapv -fno-strict-aliasing -pipe -I/usr/local/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2   -DVERSION=\"0.30\" -DXS_VERSION=\"0.30\" -fPIC "-I/usr/lib/x86_64-linux-gnu/perl/5.20/CORE"   bpc_attribCache.c
+cc -c  -I. -D_REENTRANT -D_GNU_SOURCE -DDEBIAN -fwrapv -fno-strict-aliasing -pipe -I/usr/local/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2   -DVERSION=\"0.30\" -DXS_VERSION=\"0.30\" -fPIC "-I/usr/lib/x86_64-linux-gnu/perl/5.20/CORE"   bpc_dirOps.c
+cc -c  -I. -D_REENTRANT -D_GNU_SOURCE -DDEBIAN -fwrapv -fno-strict-aliasing -pipe -I/usr/local/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2   -DVERSION=\"0.30\" -DXS_VERSION=\"0.30\" -fPIC "-I/usr/lib/x86_64-linux-gnu/perl/5.20/CORE"   bpc_fileZIO.c
+cc -c  -I. -D_REENTRANT -D_GNU_SOURCE -DDEBIAN -fwrapv -fno-strict-aliasing -pipe -I/usr/local/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2   -DVERSION=\"0.30\" -DXS_VERSION=\"0.30\" -fPIC "-I/usr/lib/x86_64-linux-gnu/perl/5.20/CORE"   bpc_hashtable.c
+cc -c  -I. -D_REENTRANT -D_GNU_SOURCE -DDEBIAN -fwrapv -fno-strict-aliasing -pipe -I/usr/local/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2   -DVERSION=\"0.30\" -DXS_VERSION=\"0.30\" -fPIC "-I/usr/lib/x86_64-linux-gnu/perl/5.20/CORE"   bpc_lib.c
+cc -c  -I. -D_REENTRANT -D_GNU_SOURCE -DDEBIAN -fwrapv -fno-strict-aliasing -pipe -I/usr/local/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2   -DVERSION=\"0.30\" -DXS_VERSION=\"0.30\" -fPIC "-I/usr/lib/x86_64-linux-gnu/perl/5.20/CORE"   bpc_poolWrite.c
+In file included from /usr/include/unistd.h:1148:0,
+                 from ./rsync.h:69,
+                 from backuppc.h:24,
+                 from bpc_poolWrite.c:20:
+In function ‘read’,
+    inlined from ‘bpc_poolWrite_copyToPool’ at bpc_poolWrite.c:664:22:
+/usr/include/x86_64-linux-gnu/bits/unistd.h:42:2: warning: call to ‘__read_chk_warn’ declared with attribute warning: read called with bigger length than size of the destination buffer
+  return __read_chk_warn (__fd, __buf, __nbytes, __bos0 (__buf));
+  ^
+cc -c  -I. -D_REENTRANT -D_GNU_SOURCE -DDEBIAN -fwrapv -fno-strict-aliasing -pipe -I/usr/local/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2   -DVERSION=\"0.30\" -DXS_VERSION=\"0.30\" -fPIC "-I/usr/lib/x86_64-linux-gnu/perl/5.20/CORE"   bpc_refCount.c
+rm -f blib/arch/auto/BackupPC/XS/XS.so
+cc -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wl,-z,relro  -shared -L/usr/local/lib -fstack-protector BackupPC_XS.o bpc_attrib.o bpc_attribCache.o bpc_dirOps.o bpc_fileZIO.o bpc_hashtable.o bpc_lib.o bpc_poolWrite.o bpc_refCount.o   -o blib/arch/auto/BackupPC/XS/XS.so zlib/libzlib.a md5/libmd5.a	\
+     	\
+  
+chmod 755 blib/arch/auto/BackupPC/XS/XS.so
+/usr/bin/perl -MExtUtils::Command::MM -e 'cp_nonempty' -- XS.bs blib/arch/auto/BackupPC/XS/XS.bs 644
+Manifying blib/man3/BackupPC::XS.3pm
+make[1]: Leaving directory '/root/BackupPC-XS-0.30/backuppc-xs-0.30'
+   dh_auto_test
+ fakeroot debian/rules binary
+dh binary
+   dh_auto_test
+   dh_testroot
+   dh_prep
+   dh_auto_install
+make[1]: Entering directory '/root/BackupPC-XS-0.30/backuppc-xs-0.30'
+make[2]: Entering directory '/root/BackupPC-XS-0.30/backuppc-xs-0.30/md5'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/root/BackupPC-XS-0.30/backuppc-xs-0.30/md5'
+make[2]: Entering directory '/root/BackupPC-XS-0.30/backuppc-xs-0.30/zlib'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/root/BackupPC-XS-0.30/backuppc-xs-0.30/zlib'
+Running Mkbootstrap for BackupPC::XS ()
+chmod 644 XS.bs
+Files found in blib/arch: installing files in blib/lib into architecture dependent library tree
+Installing /root/BackupPC-XS-0.30/backuppc-xs-0.30/debian/backuppc-xs/usr/lib/x86_64-linux-gnu/perl5/5.20/auto/BackupPC/XS/XS.so
+Installing /root/BackupPC-XS-0.30/backuppc-xs-0.30/debian/backuppc-xs/usr/lib/x86_64-linux-gnu/perl5/5.20/BackupPC/XS.pm
+Installing /root/BackupPC-XS-0.30/backuppc-xs-0.30/debian/backuppc-xs/usr/share/man/man3/BackupPC::XS.3pm
+make[1]: Leaving directory '/root/BackupPC-XS-0.30/backuppc-xs-0.30'
+   dh_installdocs
+   dh_installchangelogs
+   dh_installman
+   dh_perl
+   dh_link
+   dh_compress
+   dh_fixperms
+   dh_strip
+   dh_makeshlibs
+   dh_shlibdeps
+   dh_installdeb
+   dh_gencontrol
+dpkg-gencontrol: warning: package backuppc-xs: unused substitution variable ${misc:Pre-Depends}
+   dh_md5sums
+   dh_builddeb
+dpkg-deb: building package `backuppc-xs' in `../backuppc-xs_0.30-1_amd64.deb'.
+ dpkg-genchanges  >../backuppc-xs_0.30-1_amd64.changes
+dpkg-genchanges: including full source code in upload
+ dpkg-source --after-build backuppc-xs-0.30
+dpkg-buildpackage: full upload (original source is included)
+Now running lintian...
+warning: the authors of lintian do not recommend running it with root privileges!
+W: backuppc-xs source: outdated-autotools-helper-file config.sub 2006-07-02
+W: backuppc-xs source: outdated-autotools-helper-file config.guess 2006-07-02
+W: backuppc-xs source: changelog-should-mention-nmu
+W: backuppc-xs source: source-nmu-has-incorrect-version-number 0.30-1
+E: backuppc-xs: embedded-library usr/lib/x86_64-linux-gnu/perl5/5.20/auto/BackupPC/XS/XS.so: zlib
+W: backuppc-xs: new-package-should-close-itp-bug
+Finished running lintian.

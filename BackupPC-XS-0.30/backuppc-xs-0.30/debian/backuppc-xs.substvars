@@ -1,0 +1,4 @@
+perl:Depends=perl (>= 5.20.2-3+deb8u1), perlapi-5.20.2
+misc:Pre-Depends=multiarch-support
+shlibs:Depends=libc6 (>= 2.14)
+misc:Depends=

@@ -1,0 +1,31 @@
+Format: 1.8
+Date: Wed, 19 Aug 2015 17:51:19 +0200
+Source: rsync-bpc
+Binary: rsync-bpc
+Architecture: source amd64
+Version: 3.0.9.3-1
+Distribution: UNRELEASED
+Urgency: medium
+Maintainer: Jack <jack@k-net.pro>
+Changed-By: Jack <jack@k-net.pro>
+Description:
+ rsync-bpc  - high-performance, enterprise-grade system for backing up PCs
+Changes:
+ rsync-bpc (3.0.9.3-1) UNRELEASED; urgency=medium
+ .
+   * Initial release.
+Checksums-Sha1:
+ 02709d0fa51ce24b63a668c71886c9bcee9e3bbb 794 rsync-bpc_3.0.9.3-1.dsc
+ 7d6a3e24bb8f705e16da2b8906b960d9da34e64d 775134 rsync-bpc_3.0.9.3.orig.tar.gz
+ 834ae2a841cd701dbf98352eacb2ba81b352c541 1660 rsync-bpc_3.0.9.3-1.debian.tar.xz
+ c30fa0fa93c488cd96ac0537023e7ea4982345b0 224784 rsync-bpc_3.0.9.3-1_amd64.deb
+Checksums-Sha256:
+ 533f36e380ff25847c0067fcbbdf42f25f362fe93ec8ff94ad98b0b705d88b7e 794 rsync-bpc_3.0.9.3-1.dsc
+ 4b147a0fe60aca65879ad3430c7c8ead09562161b8bbd29f5f29054b925fe01a 775134 rsync-bpc_3.0.9.3.orig.tar.gz
+ fd65db5ba33418904f09a913d933f3546f75213fb44ead49a4bc9db9ddb4efc1 1660 rsync-bpc_3.0.9.3-1.debian.tar.xz
+ 5c38a6819f15492ce191f3def066fc9535a947768a322e149dc3f85ba2d2bb0a 224784 rsync-bpc_3.0.9.3-1_amd64.deb
+Files:
+ b8903d8c0cb9e73613e69dc2502bab1b 794 utils optional rsync-bpc_3.0.9.3-1.dsc
+ 3bed18dc0b2e0d89fb754baa144d9bbf 775134 utils optional rsync-bpc_3.0.9.3.orig.tar.gz
+ d00483288f614d2867e529952fe7e79c 1660 utils optional rsync-bpc_3.0.9.3-1.debian.tar.xz
+ 834e0dac30ac93c315696ebbb04cb1c5 224784 utils optional rsync-bpc_3.0.9.3-1_amd64.deb

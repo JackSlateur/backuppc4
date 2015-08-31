@@ -1,0 +1,26 @@
+#!/bin/sh
+
+# PROVIDE: backuppc
+# REQUIRE: LOGIN 
+#
+# Add the following line to /etc/rc.conf to enable BackupPC:
+#
+# backuppc_enable="YES"
+#
+# Submitted by Dan Niles
+
+. /etc/rc.subr
+
+name="backuppc"
+rcvar=`set_rcvar`
+load_rc_config $name
+
+: ${backuppc_enable:="NO"}
+: ${backuppc_program:="/usr/share/backuppc/bin/BackupPC"}
+: ${backuppc_flags:="-d"}
+: ${backuppc_user:="backuppc"}
+command_interpreter="/usr/bin/perl"
+command=$backuppc_program
+pidfile="/var/lib/backuppc/log/BackupPC.pid"
+
+run_rc_command "$1"
